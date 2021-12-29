@@ -34,10 +34,11 @@ model = SAC(config["policy_type"],
             env,
             verbose=1,
             tensorboard_log=f"{ROOT_DIR}/runs/{run.id}")
+
 model.learn(
     total_timesteps=config["total_timesteps"],
     callback=WandbCallback(
-        gradient_save_freq=100,
+        gradient_save_freq=1,
         model_save_path=f"{ROOT_DIR}/models/{run.id}",
         verbose=2,
     ),

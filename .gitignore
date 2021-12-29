@@ -4,3 +4,4 @@ venv/
 runs/
 models/
 wandb/
+*/videos/*
