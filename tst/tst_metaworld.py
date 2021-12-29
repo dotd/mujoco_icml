@@ -10,6 +10,10 @@ task = random.choice(ml1.train_tasks)
 env.set_task(task)  # Set task
 
 obs = env.reset()  # Reset environment
-a = env.action_space.sample()  # Sample an action
-obs, reward, done, info = env.step(a)  # Step the environoment with the sampled random action
-print(f"obs={obs}\nreward={reward}\ndone={done}\ninfo={info}")
+for i in range(10000):
+    print(f"i={i}")
+    a = env.action_space.sample()  # Sample an action
+    print(f"a={a}")
+    print("Do step")
+    obs, reward, done, info = env.step(a)  # Step the environoment with the sampled random action
+    print(f"obs={obs}\nreward={reward}\ndone={done}\ninfo={info}")
